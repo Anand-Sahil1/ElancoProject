@@ -1,0 +1,167 @@
+<html>
+<html lang="en">
+<head>
+    <title>Elanco Project</title>
+    <link rel="stylesheet" href="/stylecss">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<script src = "/javascript">
+
+</script>
+
+<body>
+
+    <div class = "navbar">
+        
+        <ul>
+            <li><p>Elanco</p></li>
+            <li><a href="">HOME</a></li>
+            <li><a href="">CONTACT US</a></li>
+            <li><a href="">FAQS</a></li>      
+          </ul>
+        
+    </div>
+    
+    <div class = "main">
+         
+        <div class = "homepage">
+            <BR></BR>
+
+            <p style = "color: aliceblue;">Click On View Button To See All Applications Name</p>
+
+            <button id="applicationButton" onclick="applicationButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">View</button>
+            <button id="hideApplicationScroller" onclick="hideApplicationScroller()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+            <br><br>
+            
+            <div id = "application-data" class="scroller">
+
+                <table style = " margin-left: 30px; margin-top: 10px; margin-bottom: 20px">
+
+                    <tbody id = "application-data-output" style="color: #F39C12">
+                    </tbody>
+
+                </table>
+                
+            </div>
+
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div>
+                <br>
+                <label style="color: aliceblue;">Enter Application Name:</label>
+                    <input type="text" id="appname"><br><br>
+                <button id="searchApplicationButton" onclick="searchApplicationButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Search</button>
+                <button id="hideSearchApplicationButton" onclick="hideSearchApplicationButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+
+                <br><br>
+            </div>
+
+            <div id = "application-data-search" class="scroller">
+
+                <Div style="background-color:black; color:#F39C12;"> <br>
+                    <p><b> Number Of Application Users:</p></b>
+                    <b> <p id="applicationUsers"></p> </b>
+                </Div>
+
+                <table style = " margin-left: 30px; margin-top: 10px; margin-bottom: 20px">
+                    <thead>
+                        <tr>
+
+                            <th>Consumed Quantity</th>
+                            <th>Cost</th>
+                            <th>Date</th>
+                            <th>Instance Id</th>
+                            <th>Resource Group/App-Name</th> 
+                            <th>Resource Location</th>         
+                            <th>Unit Of Measure</th>
+                            <th>Location</th>
+                            <th>Service Name/Meter Category</th>
+                    
+                        </tr>
+                    </thead>
+                    <tbody style="background-color:#F39C12; color: black;" id = "application-data-search-output">
+                    </tbody>
+
+                </table>
+                
+            </div>
+
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <p style = "color: aliceblue;">Click On View Button To See All Services Name</p>
+
+            <button id="serviceButton" onclick="serviceButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">View</button>
+            <button id="hideServiceScroller" onclick="hideServiceScroller()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+            <br> <br>
+
+            
+            <div id = "service-data" class="scroller">
+
+                <table style = " margin-left: 30px; margin-top: 10px; margin-bottom: 20px">
+
+                    <tbody id = "service-data-output" style="color: #F39C12">
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div>
+                <br>
+                <label style="color: aliceblue;">Enter Service Name:</label>
+                    <input type="text" id="servicename"><br><br>
+                <button id="searchServiceButton" onclick="searchServiceButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Search</button>
+                <button id="hideSearchServiceButton" onclick="hideSearchServiceButton()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+
+                <br><br>
+            </div>
+
+            <div id = "service-data-search" class="scroller">
+                
+                <Div style="background-color:black; color:#F39C12 "> <br>
+                    <p><b>Total Number Of Service Users:</b></p>
+                  <b> <p id="serviceUsers"></p> </b>
+                </Div>    
+
+                <table style = " margin-left: 30px; margin-top: 10px; margin-bottom: 20px">
+                    <thead>
+                        <tr>
+
+                            <th>Consumed Quantity</th>
+                            <th>Cost</th>
+                            <th>Date</th>
+                            <th>Instance Id</th>
+                            <th>Resource Group/App-Name</th> 
+                            <th>Resource Location</th>         
+                            <th>Unit Of Measure</th>
+                            <th>Location</th>
+                            <th>Service Name/Meter Category</th>
+
+                        </tr>
+                    </thead>
+                    <tbody style="background-color:#F39C12; color: black;" id = "service-data-search-output"> </tbody>
+                </table>
+
+            </div>
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <br>
+            <button id="ApplicationBarChart" onclick="ApplicationBarChart()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 350px; border-radius: 8%;">View Appication User Bar Chart</button>
+            <button id="hideApplicationBarChart" onclick="hideApplicationBarChart()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <br><br>
+
+            <button id="ServiceBarChart" onclick="ServiceBarChart()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 350px; border-radius: 8%;">View Service User Bar Chart</button>
+            <button id="hideServiceBarChart" onclick="hideServiceBarChart()" style="padding:16px,16px; color: black; background-color: white; border: 5%; font-size: large; width: 125px; border-radius: 8%;">Hide</button>
+
+            <div>
+                <canvas id="barChart"></canvas>
+            </div>
+            <br>
+        </div>
+    </div>
+</body>
+</html>
